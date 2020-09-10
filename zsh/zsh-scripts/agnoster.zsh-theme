@@ -25,7 +25,8 @@
 ### Segments of the prompt, default order declaration
 
 typeset -aHg AGNOSTER_PROMPT_SEGMENTS=(
-		prompt_start
+    prompt_status
+    prompt_start
     prompt_virtualenv
     prompt_dir
     prompt_git
@@ -42,6 +43,7 @@ fi
 GIT_FG=black
 
 # Characters
+PROMPT_INDICATOR="\u276f"
 SEGMENT_SEPARATOR="\ue0b0"
 PLUSMINUS="\u00b1"
 BRANCH="\ue0a0"
@@ -73,7 +75,7 @@ prompt_end() {
   else
     print -n "%{%k%}"
   fi
-  print -n "%{%f%}"
+  print -n "%{%f%}\n$PROMPT_INDICATOR"
   CURRENT_BG=''
 }
 
@@ -135,7 +137,7 @@ prompt_status() {
   [[ $UID -eq 0 ]] && symbols+="%{%F{yellow}%}$LIGHTNING"
   [[ $(jobs -l | wc -l) -gt 0 ]] && symbols+="%{%F{cyan}%}$GEAR"
 
-  [[ -n "$symbols" ]] && prompt_segment $PRIMARY_FG default " $symbols "
+  [[ -n "$symbols" ]] && print -n "$symbols"
 }
 
 # Display current virtual environment
