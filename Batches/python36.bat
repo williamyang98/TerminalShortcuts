@@ -1,1 +1,0 @@
-@"C:\Python36-32\python3.exe" %*

@@ -1,1 +1,0 @@
-@"C:\Python27\Scripts\youtube-dl.exe" %*

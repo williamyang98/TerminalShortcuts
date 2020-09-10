@@ -1,1 +1,0 @@
-&"C:\Users\acidi\Dropbox\Coding\Languages\Python\Projects\rename-show\rename-movie.py" $args
