@@ -1,14 +1,27 @@
-" Set compatibility to Vim only.
-set nocompatible
-
 " Helps force plug-ins to load correctly when it is turned back on below.
 filetype off
 
+" vim-plug
+call plug#begin('~/AppData/Local/nvim/plugged')
+" Plug 'vim-airline/vim-airline'
+" Plug 'vim-airline/vim-airline-themes'
+" Plug 'vim-surround/vim-surround'
+call plug#end()
+
+" vundle
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'file://C:/users/acidi/.vim/bundle/vs-vim-easymotion'
+" Plugin 'easymotion/vim-easymotion'
+call vundle#end()
+filetype plugin indent on
+
+" Set compatibility to Vim only.
+set nocompatible
+
 " Turn on syntax highlighting.
 syntax on
-
-" For plug-ins to load correctly.
-filetype plugin indent on
 
 " Turn off modelines
 set modelines=0
@@ -45,10 +58,10 @@ set matchpairs+=<:>
 " set listchars=tab:>\ ,trail:*,extends:#,nbsp:.
 
 " Show line numbers
-set number relativenumber
+" set number relativenumber
 
 " Set status line display
-set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%l,%v][%p%%]\ [BUFFER=%n]\ %{strftime('%c')}
+" set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%l,%v][%p%%]\ [BUFFER=%n]\ %{strftime('%c')}
 
 " Encoding
 set encoding=utf-8
@@ -66,9 +79,15 @@ set smartcase
 set viminfo='100,<9999,s100
 
 " Map the <Space> key to toggle a selected fold opened/closed.
-nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
-vnoremap <Space> zf
+" nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
+" vnoremap <Space> zf
 
-" Automatically save and load folds
-autocmd BufWinLeave *.* mkview
-autocmd BufWinEnter *.* silent loadview"
+" plugins
+" let g:airline_theme='simple'
+
+let g:EasyMotion_smartcase = 1
+" nmap f <Plug>(easymotion-overwin-f2)
+" map <Space>f <Plug>(easymotion-bd-f)
+" map <Space>l <Plug>(easymotion-bd-jk)
+map <Space> <Plug>(easymotion-bd-w)
+" nmap <Space> <Plug>(easymotion-overwin-line)
