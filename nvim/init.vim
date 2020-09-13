@@ -5,16 +5,22 @@ filetype off
 call plug#begin('~/AppData/Local/nvim/plugged')
 " Plug 'vim-airline/vim-airline'
 " Plug 'vim-airline/vim-airline-themes'
-Plug 'itchyny/lightline.vim'
+if !exists('g:vscode')
+    Plug 'itchyny/lightline.vim'
+endif
 Plug 'vim-surround/vim-surround'
 call plug#end()
+
 
 " vundle
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
-" Plugin 'asvetliakov/vim-easymotion'
-Plugin 'easymotion/vim-easymotion'
+if !exists('g:vscode')
+    Plugin 'easymotion/vim-easymotion'
+else
+    Plugin 'file://~/.vim/bundle/vs-vim-easymotion'
+endif
 call vundle#end()
 filetype plugin indent on
 
@@ -59,7 +65,9 @@ set matchpairs+=<:>
 " set listchars=tab:>\ ,trail:*,extends:#,nbsp:.
 
 " Show line numbers
-set number relativenumber
+if !exists('g:vscode')
+    set number relativenumber
+endif
 
 " Set status line display
 " set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%l,%v][%p%%]\ [BUFFER=%n]\ %{strftime('%c')}
