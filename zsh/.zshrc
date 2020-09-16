@@ -12,3 +12,5 @@ compinit
 
 source ~/zsh-scripts/vi-mode.zsh
 source ~/zsh-scripts/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+alias lwd='source ~/zsh-scripts/lwd.zsh'
