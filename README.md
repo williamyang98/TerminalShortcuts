@@ -23,7 +23,10 @@ If there are issues with plugin loading, check if environment variable for $user
 5. Run <code>:echo $userprofile</code> inside nvim and check against value for ~/.
 
 ## Clink (enhances cmd.exe)
-1. Download and install clink.x_setup.exe from [Clink Releases](https://github.com/chrisant996/clink/releases)
-2. Open cmd.exe and run <code>clink info</code> and find the folder for scripts
-3. Copy oh-my-posh.lua into that scripts folder
+1. Run installation steps for "TerminalShortcuts/PowerShell" which installs oh-my-posh and the custom theme 
+2. Download and install clink.x_setup.exe from [Clink Releases](https://github.com/chrisant996/clink/releases)
+3. Open cmd.exe and run <code>clink info</code> and find the folder for scripts
+4. Copy oh-my-posh.lua into that scripts folder
+5. If there are issues with the path, change path variables inside lua script to point to oh-my-posh.exe install and configuration file
+
 
