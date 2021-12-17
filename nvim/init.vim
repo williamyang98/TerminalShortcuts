@@ -2,7 +2,7 @@
 filetype off
 
 " vim-plug
-call plug#begin('~/AppData/Local/nvim/plugged')
+call plug#begin('$userprofile/AppData/Local/nvim/plugged')
 " Plug 'vim-airline/vim-airline'
 " Plug 'vim-airline/vim-airline-themes'
 if !exists('g:vscode')
@@ -13,7 +13,7 @@ call plug#end()
 
 
 " vundle
-set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=$userprofile/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 if !exists('g:vscode')

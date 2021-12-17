@@ -1,1 +1,0 @@
-Copy-Item -Path "./terminal.ico" -Destination $env:LOCALAPPDATA\Microsoft\WindowsApps\terminal.ico
