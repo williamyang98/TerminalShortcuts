@@ -8,22 +8,33 @@ call plug#begin('$userprofile/AppData/Local/nvim/plugged')
 if !exists('g:vscode')
     Plug 'itchyny/lightline.vim'
 endif
-Plug 'vim-surround/vim-surround'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-fugitive'
+Plug 'easymotion/vim-easymotion'
+Plug 'scrooloose/nerdtree'
 call plug#end()
 
-
-" vundle
-set rtp+=$userprofile/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
-if !exists('g:vscode')
-    Plugin 'easymotion/vim-easymotion'
-else
-    Plugin 'file://~/.vim/bundle/vs-vim-easymotion'
-endif
-call vundle#end()
 filetype plugin indent on
 
+" ### Easy motion config ###
+let g:EasyMotion_smartcase = 1
+" nmap f <Plug>(easymotion-overwin-f2)
+" map <Space>f <Plug>(easymotion-bd-f)
+" map <Space>l <Plug>(easymotion-bd-jk)
+map <Space> <Plug>(easymotion-bd-w)
+" nmap <Space> <Plug>(easymotion-overwin-line)
+
+" ### Nerdtree shortcuts ###
+nnoremap <C-n> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
+
+" ### Native vim options ###
+nnoremap <C-t> :tabnew<CR>
+map <C-h> <C-W>h
+map <C-l> <C-W>l
+
+" ### Native vim options ###
 " Set compatibility to Vim only.
 set nocompatible
 
@@ -35,6 +46,7 @@ set modelines=0
 
 " Automatically wrap text that extends beyond the screen length.
 set wrap
+
 " Vim's auto indentation feature does not work properly with text copied from outside of Vim. Press the <F2> key to toggle paste mode on/off.
 nnoremap <F2> :set invpaste paste?<CR>
 imap <F2> <C-O>:set invpaste paste?<CR>
@@ -91,11 +103,3 @@ set viminfo='100,<9999,s100
 " nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
 " vnoremap <Space> zf
 
-" plugins
-
-let g:EasyMotion_smartcase = 1
-" nmap f <Plug>(easymotion-overwin-f2)
-" map <Space>f <Plug>(easymotion-bd-f)
-" map <Space>l <Plug>(easymotion-bd-jk)
-map <Space> <Plug>(easymotion-bd-w)
-" nmap <Space> <Plug>(easymotion-overwin-line)
