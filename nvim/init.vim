@@ -26,13 +26,18 @@ map <Space> <Plug>(easymotion-bd-w)
 " nmap <Space> <Plug>(easymotion-overwin-line)
 
 " ### Nerdtree shortcuts ###
-nnoremap <C-n> :NERDTreeToggle<CR>
+nnoremap <C-n> :NERDTreeFocus<CR>
+nnoremap <C-S-n> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
 
 " ### Native vim options ###
+" Create tab
 nnoremap <C-t> :tabnew<CR>
+" Navigate panes
 map <C-h> <C-W>h
 map <C-l> <C-W>l
+" Exit terminal edit mode
+:tnoremap <Esc> <C-\><C-n>
 
 " ### Native vim options ###
 " Set compatibility to Vim only.
