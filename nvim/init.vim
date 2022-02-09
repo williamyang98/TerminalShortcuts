@@ -27,7 +27,7 @@ map <Space> <Plug>(easymotion-bd-w)
 
 " ### Nerdtree shortcuts ###
 nnoremap <C-n> :NERDTreeFocus<CR>
-nnoremap <C-S-n> :NERDTreeToggle<CR>
+nnoremap <C-m> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
 
 " ### Native vim options ###

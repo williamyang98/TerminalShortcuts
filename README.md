@@ -29,4 +29,6 @@ If there are issues with plugin loading, check if environment variable for $user
 4. Copy oh-my-posh.lua into that scripts folder
 5. If there are issues with the path, change path variables inside lua script to point to oh-my-posh.exe install and configuration file
 
-
+## Scripts 
+Batch files for setting up dev environment
+- fx.bat: C++, vcpkg, cmake, msbuild
