@@ -39,6 +39,12 @@ map <C-l> <C-W>l
 " Exit terminal edit mode
 :tnoremap <Esc> <C-\><C-n>
 
+" Custom settings when opening a terminal buffer
+augroup custom_term
+	autocmd!
+	autocmd TermOpen * setlocal nonumber norelativenumber bufhidden=hide
+augroup END
+
 " ### Native vim options ###
 " Set compatibility to Vim only.
 set nocompatible
