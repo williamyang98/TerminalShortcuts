@@ -6,11 +6,10 @@ Basic setup for Windows development environment
 2. Install one of the custom NERD fonts which support custom unicode characters for the terminal (or download one from [nerdfonts](https://www.nerdfonts.com/font-downloads))
 3. Setup terminal of choice to use this custom font
 
-
-## Powershell
-1. Navigate to TerminalShortcuts/PowerShell folder
-2. Open powershell and run <code>./install_profile.ps1</code>
-3. Restart powershell with <code>. $profile</code>
+## Bash
+1. Install git (which includes bash for git)
+2. Copy the .bashrc file to ~/.bashrc
+3. To forcefully apply .bashrc to bash, run <code>source ~/.bashrc</code>
 
 ## NVim
 1. Download neovim from [Neovim Github Releases](https://github.com/neovim/neovim/releases)
@@ -21,6 +20,11 @@ Basic setup for Windows development environment
 If there are issues with plugin loading, check if environment variable for $userprofile is set correctly. 
 
 5. Run <code>:echo $userprofile</code> inside nvim and check against value for ~/.
+
+## Powershell
+1. Navigate to TerminalShortcuts/PowerShell folder
+2. Open powershell and run <code>./install_profile.ps1</code>
+3. Restart powershell with <code>. $profile</code>
 
 ## Clink (enhances cmd.exe)
 1. Run installation steps for "TerminalShortcuts/PowerShell" which installs oh-my-posh and the custom theme 
