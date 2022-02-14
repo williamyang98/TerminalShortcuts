@@ -1,8 +1,6 @@
 @echo off
 
 :GETOPTS
-if /I "%1" == "vsdev" call cmd /k "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\Tools\VsDevCmd.bat"
-
 if /I "%1" == "cmake-conf" call^
  cmake --no-warn-unused-cli^
  -DCMAKE_TOOLCHAIN_FILE:STRING=C:/tools/vcpkg/scripts/buildsystems/vcpkg.cmake^
@@ -33,7 +31,6 @@ goto EXIT
 
 :HELP
 echo Available commands
-echo vsdev             - Startup visual studio development environment
 echo cmake-conf        - Run cmake configure
 echo build             - Run msbuild (Usage: build [.vcprojx] [build_type]
 goto EXIT
