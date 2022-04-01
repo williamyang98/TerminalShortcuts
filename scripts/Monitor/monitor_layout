@@ -1,0 +1,8 @@
+screen -t "Htop" htop
+split -v
+focus
+screen -t "Temperature" watch -n 1 sensors
+split  
+focus
+screen -t "Gpu" sudo intel_gpu_top
+focus
