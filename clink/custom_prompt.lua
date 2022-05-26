@@ -23,7 +23,8 @@ function get_user()
 end
 
 -- Create custom prompt string
-function custom_prompt()
+local custom_prompt = clink.promptfilter(1)
+function custom_prompt:filter()
     local user_and_host_color = "\x1b[01;32m"
     local user_and_host = os.getenv("USERNAME")
 
@@ -38,12 +39,10 @@ function custom_prompt()
     local prompt_tail = "\x1b[31m\n>"
     local last_color = "\x1b[00m"
 
-    clink.prompt.value = string.format(
+    return string.format(
         "%s%s %s%s %s%s%s%s ", 
         user_and_host_color, user_and_host,
         cwd_color, cwd, 
         git_branch_color, git_branch, 
-        prompt_tail, last_color) 
+        prompt_tail, last_color)
 end
-
-clink.prompt.register_filter(custom_prompt, 1)
