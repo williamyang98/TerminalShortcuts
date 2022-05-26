@@ -1,6 +1,6 @@
 @echo off
 
-set VS_ROOT=C:\Program Files (x86)\Microsoft Visual Studio\2019\Community
+set VS_ROOT=C:\Program Files\Microsoft Visual Studio\2022\Community
 set VS_DIR=%VS_ROOT%\VC\Auxiliary\Build
 set VS_DEV=%VS_ROOT%\Common7\Tools\VsDevCmd.bat 
 
