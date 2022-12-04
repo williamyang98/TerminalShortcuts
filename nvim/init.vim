@@ -13,6 +13,8 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'easymotion/vim-easymotion'
 Plug 'scrooloose/nerdtree'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 call plug#end()
 
 filetype plugin indent on
@@ -44,6 +46,8 @@ augroup custom_term
 	autocmd!
 	autocmd TermOpen * setlocal nonumber norelativenumber bufhidden=hide
 augroup END
+
+let SHELL="winpty nvim"
 
 " ### Native vim options ###
 " Set compatibility to Vim only.
