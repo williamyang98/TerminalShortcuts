@@ -36,15 +36,15 @@ nnoremap <C-f> :NERDTreeFind<CR>
 " Create tab
 nnoremap <C-t> :tabnew<CR>
 " Navigate panes
-map <C-h> <C-W>h
-map <C-l> <C-W>l
+map <C-h> <C-w>h
+map <C-l> <C-w>l
 " Exit terminal edit mode
 :tnoremap <Esc> <C-\><C-n>
 
 " Custom settings when opening a terminal buffer
 augroup custom_term
-	autocmd!
-	autocmd TermOpen * setlocal nonumber norelativenumber bufhidden=hide
+    autocmd!
+    autocmd TermOpen * setlocal nonumber norelativenumber bufhidden=hide
 augroup END
 
 let SHELL="winpty nvim"
@@ -88,8 +88,8 @@ set showcmd
 set matchpairs+=<:>
 
 " Display different types of white spaces.
-" set list
-" set listchars=tab:>\ ,trail:*,extends:#,nbsp:.
+set list
+set listchars=tab:»\›,extends:›,precedes:‹,nbsp:·,trail:·
 
 " Show line numbers
 if !exists('g:vscode')
