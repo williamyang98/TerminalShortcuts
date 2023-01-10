@@ -2,9 +2,15 @@
 " Helps force plug-ins to load correctly when it is turned back on below.
 filetype off
 call plug#begin('~/.config/nvim/plugged')
-" Status line 
 if !exists('g:vscode')
+    " Status line 
     Plug 'itchyny/lightline.vim'
+    " Autocomplete
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    " ### CoC extensions
+    " 1. Install node.js 
+    " 2. Run :CocUpdate
+    " 3. Run :CocInstall coc-clangd coc-cmake [other coc extensions]
 endif
 " File navigation
 Plug 'scrooloose/nerdtree'
