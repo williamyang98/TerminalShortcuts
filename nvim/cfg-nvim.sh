@@ -1,3 +1,4 @@
+#!/bin/sh
 if [[ "$OSTYPE" == "win32" ]]; then
     NVIM_DATA_PATH="$LOCALAPPDATA/nvim-data"
 else
@@ -11,12 +12,15 @@ NVIM_PLUG_GITHUB="https://raw.githubusercontent.com/junegunn/vim-plug/master/plu
 curl -fLo "${NVIM_DATA_PATH}/${NVIM_PLUG_PATH}" --create-dirs ${NVIM_PLUG_GITHUB}
 
 # Copy our init.vim (.vimrc for normal vim, init.vim for neovim)
-if [[ "$OSTYPE" == "win32" ]]; then
+if [[ "$OSTYPE" == "win32" ]] ||
+   [[ "$OSTYPE" == "msys" ]]
+then
     mkdir -p $LOCALAPPDATA/nvim
-    ln init.vim $LOCALAPPDATA/nvim/init.vim
+    cp init.vim $LOCALAPPDATA/nvim/init.vim
 else
-    ln init.vim ~/.config/nvim/init.vim
-    ln init.vim ~/.vimrc
+    mkdir -p ~/.config/nvim/
+    ln -sf init.vim ~/.config/nvim/init.vim
+    ln -sf init.vim ~/.vimrc
 fi
 
 # Install plugins by running :PlugInstall
