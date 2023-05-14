@@ -1,5 +1,7 @@
 #!/bin/sh
-if [[ "$OSTYPE" == "win32" ]]; then
+if [[ "$OSTYPE" == "win32" ]] ||
+   [[ "$OSTYPE" == "msys" ]]
+then
     NVIM_DATA_PATH="$LOCALAPPDATA/nvim-data"
 else
     NVIM_DATA_PATH="${XDG_DATA_HOME:-$HOME/.local/share}/nvim"
