@@ -6,7 +6,7 @@ if !exists('g:vscode')
     " Status line 
     Plug 'itchyny/lightline.vim'
     " Autocomplete
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    " Plug 'neoclide/coc.nvim', {'branch': 'release'}
     " ### CoC extensions
     " 1. Install node.js 
     " 2. Run :CocUpdate
@@ -46,20 +46,19 @@ nnoremap <C-f> :NERDTreeFind<CR>
 " Create tab
 nnoremap <C-t> :tabnew<CR>
 " Navigate panes
-map <C-h> <C-w>h
-map <C-l> <C-w>l
-" Exit terminal edit mode
-:tnoremap <Esc> <C-\><C-n>
-
+" map <C-h> <C-w>h
+" map <C-l> <C-w>l
 
 " ### Terminal settings ###
+" Exit terminal edit mode
+" :tnoremap <Esc> <C-\><C-n>
+set shell=cmd
 if has('nvim')
 augroup custom_term
     autocmd!
     autocmd TermOpen * setlocal nonumber norelativenumber bufhidden=hide
 augroup END
 endif
-let SHELL="winpty nvim"
 
 
 " ### Native vim options ###

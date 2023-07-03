@@ -21,8 +21,10 @@ then
     cp init.vim $LOCALAPPDATA/nvim/init.vim
 else
     mkdir -p ~/.config/nvim/
-    ln -sf init.vim ~/.config/nvim/init.vim
-    ln -sf init.vim ~/.vimrc
+    # ln -sf init.vim ~/.config/nvim/init.vim
+    # ln -sf init.vim ~/.vimrc
+    cp init.vim ~/.config/nvim/init.vim
+    cp init.vim ~/.vimrc
 fi
 
 # Install plugins by running :PlugInstall
