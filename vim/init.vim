@@ -1,7 +1,7 @@
 " ### vim-plug config ###
 " Helps force plug-ins to load correctly when it is turned back on below.
 filetype off
-call plug#begin('~/.config/nvim/plugged')
+call plug#begin()
     if !exists('g:vscode')
         " Status line 
         Plug 'itchyny/lightline.vim'
