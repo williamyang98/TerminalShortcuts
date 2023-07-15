@@ -44,6 +44,6 @@ module.setup({
     },
 })
 
-vim.keymap.set("n", "<leader>to", ":NvimTreeOpen<CR>")
-vim.keymap.set("n", "<leader>tc", ":NvimTreeClose<CR>")
-vim.keymap.set("n", "<leader>tt", ":NvimTreeToggle<CR>")
+vim.keymap.set("n", "<leader>mo", ":NvimTreeOpen<CR>")
+vim.keymap.set("n", "<leader>mc", ":NvimTreeClose<CR>")
+vim.keymap.set("n", "<leader>mt", ":NvimTreeToggle<CR>")
