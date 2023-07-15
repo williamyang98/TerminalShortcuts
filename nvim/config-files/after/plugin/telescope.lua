@@ -13,5 +13,22 @@ vim.keymap.set("n", "<leader>fgs", builtin.git_status, {})
 vim.keymap.set("n", "<leader>fgb", builtin.git_branches, {})
 -- lsp
 vim.keymap.set("n", "<leader>flr", builtin.lsp_references, {})
+-- vim.keymap.set("n", "<leader>flo", ":Telescope lsp_document_symbols ignore_symbols=variable<CR>", {})
+vim.keymap.set("n", "<leader>flo", function() 
+    local opts = {
+        symbols = {
+            "interface",
+            "class",
+            "constructor",
+            "method",
+        }
+    }
+    if vim.bo.filetype == "vim" then
+        opts.symbols = { "function" }
+    end
+    builtin.lsp_document_symbols(opts)
+end)
+-- quickfix buffer
+vim.keymap.set("n", "<leader>fq", builtin.quickfix, {})
 -- other
 vim.keymap.set("n", "<leader>fh", builtin.help_tags, {})
