@@ -16,8 +16,8 @@ vim.keymap.set("v", "<C-k>", ":m '<-2<CR>gv=gv")
 -- vim tab
 vim.keymap.set("n", "<leader>tn", ":tabnew<CR>")
 vim.keymap.set("n", "<leader>tc", ":tabc<CR>")
-vim.keymap.set("n", "<leader>tl", ":tabm 2<CR>")
+vim.keymap.set("n", "<leader>tl", ":tabm +1<CR>")
 vim.keymap.set("n", "<leader>th", ":tabm -1<CR>")
 
--- vim buffers
+--1vim buffers
 vim.keymap.set("n", "<leader>b", "<C-6>")
