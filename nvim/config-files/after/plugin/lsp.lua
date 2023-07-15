@@ -8,7 +8,7 @@ lsp.ensure_installed({
     -- "lua_ls",
     -- systems
     "clangd",
-    "cmake",
+    -- "cmake",
     "rust_analyzer",
     -- webdev
     -- "tsserver",
