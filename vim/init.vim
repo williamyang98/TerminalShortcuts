@@ -2,27 +2,22 @@
 " Helps force plug-ins to load correctly when it is turned back on below.
 filetype off
 call plug#begin('~/.config/nvim/plugged')
-if !exists('g:vscode')
-    " Status line 
-    Plug 'itchyny/lightline.vim'
-    " Autocomplete
-    " Plug 'neoclide/coc.nvim', {'branch': 'release'}
-    " ### CoC extensions
-    " 1. Install node.js 
-    " 2. Run :CocUpdate
-    " 3. Run :CocInstall coc-clangd coc-cmake [other coc extensions]
-endif
-" File navigation
-Plug 'scrooloose/nerdtree'
-Plug 'ctrlpvim/ctrlp.vim'       " Fuzzy finder
-" Code navigation
-Plug 'easymotion/vim-easymotion'
-" Code editing
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-fugitive'
-" (Optional) Code highlighting
-" Plug 'bfrg/vim-cpp-modern'
+    if !exists('g:vscode')
+        " Status line 
+        Plug 'itchyny/lightline.vim'
+        " Vscode has line numbers included
+        set number relativenumber
+    endif
+    " File navigation
+    Plug 'scrooloose/nerdtree'
+    Plug 'ctrlpvim/ctrlp.vim'       " Fuzzy finder
+    " Code navigation
+    Plug 'easymotion/vim-easymotion'
+    " Code editing
+    Plug 'tpope/vim-surround'
+    Plug 'tpope/vim-commentary'
+    Plug 'tpope/vim-fugitive'
+    Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 call plug#end()
 filetype plugin indent on
 
@@ -37,27 +32,23 @@ map <Space> <Plug>(easymotion-bd-w)
 
 
 " ### Nerdtree shortcuts ###
-nnoremap <C-n> :NERDTreeFocus<CR>
 nnoremap <C-m> :NERDTreeToggle<CR>
-nnoremap <C-f> :NERDTreeFind<CR>
 
 
 " ### Native vim options ###
 " Create tab
 nnoremap <C-t> :tabnew<CR>
-" Navigate panes
-" map <C-h> <C-w>h
-" map <C-l> <C-w>l
+
 
 " ### Terminal settings ###
 " Exit terminal edit mode
 " :tnoremap <Esc> <C-\><C-n>
-set shell=cmd
-if has('nvim')
-augroup custom_term
-    autocmd!
-    autocmd TermOpen * setlocal nonumber norelativenumber bufhidden=hide
-augroup END
+set shell=bash
+    if has('nvim')
+    augroup custom_term
+        autocmd!
+        autocmd TermOpen * setlocal nonumber norelativenumber bufhidden=hide
+    augroup END
 endif
 
 
@@ -71,7 +62,7 @@ nnoremap <F2> :set invpaste paste?<CR>
 imap <F2> <C-O>:set invpaste paste?<CR>
 set pastetoggle=<F2>
 " Setup tabs/spaces correctly
-set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
+set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab
 " Display 5 lines above/below the cursor when scrolling with a mouse.
 set scrolloff=5
 " Fixes common backspace problems
@@ -88,10 +79,6 @@ set matchpairs+=<:>
 " Display different types of white spaces.
 set list
 set listchars=tab:»\›,extends:›,precedes:‹,nbsp:·,trail:·
-" Show line numbers
-if !exists('g:vscode')
-    set number relativenumber
-endif
 " Set status line display
 " set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%l,%v][%p%%]\ [BUFFER=%n]\ %{strftime('%c')}
 " Encoding
@@ -106,7 +93,5 @@ set ignorecase
 set smartcase
 " Store info from no more than 100 files at a time, 9999 lines of text, 100kb of data. Useful for copying large amounts of data between files.
 set viminfo='100,<9999,s100
-" Map the <Space> key to toggle a selected fold opened/closed.
-" nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
-" vnoremap <Space> zf
-
+" Code folding
+set foldmethod=manual

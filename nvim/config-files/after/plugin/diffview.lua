@@ -1,0 +1,5 @@
+vim.keymap.set("n", "<leader>dr", ":DiffviewRefresh<CR>")
+vim.keymap.set("n", "<leader>do", ":DiffviewOpen<CR>")
+vim.keymap.set("n", "<leader>dc", ":DiffviewClose<CR>")
+vim.keymap.set("n", "<leader>dt", ":DiffviewToggleFiles<CR>")
+vim.keymap.set("n", "<leader>dh", ":DiffviewFileHistory ")
