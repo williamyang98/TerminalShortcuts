@@ -1,77 +1,82 @@
-" ### vim-plug config ###
+" set compatibility to Vim only.
+set nocompatible
+
+" ## vim-plug config
 " Helps force plug-ins to load correctly when it is turned back on below.
 filetype off
 call plug#begin()
-    if !exists('g:vscode')
-        " Status line 
-        Plug 'itchyny/lightline.vim'
-        " Vscode has line numbers included
-        set number relativenumber
-    endif
-    " File navigation
-    Plug 'scrooloose/nerdtree'
-    Plug 'ctrlpvim/ctrlp.vim'       " Fuzzy finder
-    " Code navigation
-    Plug 'easymotion/vim-easymotion'
-    " Code editing
+    " code editing
     Plug 'tpope/vim-surround'
     Plug 'tpope/vim-commentary'
     Plug 'tpope/vim-fugitive'
-    Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+    Plug 'tpope/vim-repeat'
+    Plug 'mg979/vim-visual-multi', { 'branch': 'master' }
+    " undo history
+    Plug 'mbbill/undotree'
+    " status line
+    Plug 'itchyny/lightline.vim'
+    " navigation
+    Plug 'scrooloose/nerdtree'
+    Plug 'easymotion/vim-easymotion'
+    " fuzzy search
+    Plug 'ctrlpvim/ctrlp.vim'       " Fuzzy finder
 call plug#end()
 filetype plugin indent on
 
+
 " ## vim settings
-set nocompatible        " Set compatibility to Vim only.
+" display settings
 syntax on
-set modelines=0
-set wrap
-" tabs
-set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab
-" visual
+set encoding=utf-8
 set scrolloff=5
-set ttyfast
-set showmode
+set number 
+set relativenumber
 set showcmd
-set laststatus=2
+set showmode
+set laststatus=2        " always show status line
+set wrap
+set ttyfast
+" mouse controls
+set mouse=a
+" disable mode lines
+set nomodeline
+set modelines=0
+" stop adding eol on dos
+set nofixendofline
+" Fixes common backspace problems
+set backspace=indent,eol,start
+" pair matching
+set matchpairs+=<:>
 " show whitespace characters
 set list
 set listchars=tab:»\›,extends:›,precedes:‹,nbsp:·,trail:·
-" set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%l,%v][%p%%]\ [BUFFER=%n]\ %{strftime('%c')}
-set encoding=utf-8
-" bracket switching
-set matchpairs+=<:>
-" Fixes common backspace problems
-set backspace=indent,eol,start
-" Highlight matching search patterns
-set hlsearch
-" Enable incremental search
+" tab size
+set tabstop=4 
+set softtabstop=4 
+set expandtab 
+set shiftwidth=4 
+set smarttab
+" search
 set incsearch
-" Include matching uppercase words with lowercase search term
+set hlsearch
 set ignorecase
-" Include only uppercase words with uppercase search term
 set smartcase
-" Store info from no more than 100 files at a time, 9999 lines of text, 100kb of data. Useful for copying large amounts of data between files.
+" change backup method
+set noswapfile
+set nobackup
+set undofile
+set undodir=$HOME/.vim/undodir
+" terminal settings
+autocmd TerminalOpen * setlocal nonumber norelativenumber
+" set buffer size
 set viminfo='100,<9999,s100
 " code folding
 set foldmethod=manual
-" vim terminal
-set shell=bash
-if has('nvim')
-    augroup custom_term
-        autocmd!
-        autocmd TermOpen * setlocal nonumber norelativenumber
-    augroup END
-endif
 
 
-" ## remappings
+" ## remap
 let mapleader = " "
-" easymotion
-let g:EasyMotion_smartcase = 1
-map \\\\\\ <Plug>(easymotion-prefix)
-map <leader><leader> <Plug>(easymotion-bd-w)
-" recenter cursor after search
+" recenter cursor vertically after scroll and search
 nnoremap <C-d> <C-d>zz
 nnoremap <C-u> <C-u>zz
 nnoremap n nzzzv
@@ -82,14 +87,6 @@ nnoremap <C-k> :m.-2<CR>==
 " visual model relocation
 vnoremap <C-j> :m'>+1<CR>gv=gv
 vnoremap <C-k> :m'<-2<CR>gv=gv
-" vim paste
-nnoremap <F2> :set invpaste paste?<CR>
-imap <F2> <C-O>:set invpaste paste?<CR>
-set pastetoggle=<F2>
-" nerdtree
-nnoremap <leader>mo :NERDTreeFocus<CR>
-nnoremap <leader>mc :NERDTreeClose<CR>
-nnoremap <leader>mt :NERDTreeToggle<CR>
 " vim tab
 nnoremap <leader>tn :tabnew<CR>
 nnoremap <leader>tc :tabc<CR>
@@ -97,3 +94,30 @@ nnoremap <leader>tl :tabm +1<CR>
 nnoremap <leader>th :tabm -1<CR>
 " vim buffers
 nnoremap <leader>b :b#<CR> 
+" vim paste
+nnoremap <F2> :set invpaste paste?<CR>
+imap <F2> <C-O>:set invpaste paste?<CR>
+set pastetoggle=<F2>
+
+
+" ## plugin configuration
+" easymotion
+let g:EasyMotion_smartcase = 1
+map \\\\\\ <Plug>(easymotion-prefix)
+nnoremap <leader><leader> <Plug>(easymotion-bd-w)
+" nerdtree
+nnoremap <leader>mo :NERDTreeFocus<CR>
+nnoremap <leader>mc :NERDTreeClose<CR>
+nnoremap <leader>mt :NERDTreeToggle<CR>
+" vim-commentary
+autocmd FileType c,cpp setlocal commentstring=//\ %s
+" ctrl-p
+let g:ctrlp_map = "\\\\\\\\\\"
+nnoremap <leader>p :CtrlP<CR> 
+nnoremap <leader>fp :CtrlP<CR> 
+nnoremap <leader>fb :CtrlPBuffer<CR> 
+nnoremap <leader>fw :CtrlPMixed<CR> 
+" undotree
+nnoremap <leader>uo :UndotreeShow<CR>
+nnoremap <leader>uc :UndotreeHide<CR>
+nnoremap <leader>ut :UndotreeToggle<CR>
