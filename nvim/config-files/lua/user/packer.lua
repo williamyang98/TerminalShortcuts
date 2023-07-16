@@ -12,12 +12,9 @@ return require("packer").startup(function(use)
     use "mbbill/undotree"
 
     -- colorscheme
-    use {
-        "folke/tokyonight.nvim",
-        lazy = false,
-        priority = 1000,
-        opts = {},
-    }
+    use { "catppuccin/nvim", as = "catppuccin" }
+
+    -- status line
     use "nvim-lualine/lualine.nvim"
 
     -- navigation
@@ -29,6 +26,10 @@ return require("packer").startup(function(use)
         "nvim-telescope/telescope.nvim", branch = "0.1.x",
         requires = { { "nvim-lua/plenary.nvim" } },
     }
+
+    -- git
+    use { "sindrets/diffview.nvim" }
+    use { "lewis6991/gitsigns.nvim" }
 
     -- treesitter
     use {

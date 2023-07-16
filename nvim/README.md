@@ -5,8 +5,8 @@
 ## Install ripgrep for telescope
 - [repository](https://github.com/BurntSushi/ripgrep).
 - Requires rust toolchain on Windows.
-- Run ```cargo install ripgrep```.
-- Make sure ```~/.cargo/bin/``` is in the path for ```rg.exe``` to be present.
+    - Run ```cargo install ripgrep```.
+    - Make sure ```~/.cargo/bin/``` is in the path for ```rg.exe``` to be present.
 - On linux with a package manager install ```ripgrep```
 
 ## Setup compiler for treesitter parser and LSP servers
@@ -33,14 +33,17 @@
 | Binding       | Description |
 | ------------- | ----------- |
 | ```<leader>p```   | Open git files |
-| ```<leader>fgf``` | Open git files |
-| ```<leader>fgs``` | Open git status |
-| ```<leader>fgb``` | Open git branches |
 | ```<leader>fp```  | Open workspace files |
 | ```<leader>fb```  | Open buffers |
 | ```<leader>fw```  | Open rip grep |
+| ```<leader>fgf``` | Open git files |
+| ```<leader>fgs``` | Open git status |
+| ```<leader>fgb``` | Open git branches |
 | ```<leader>flr``` | Open lsp references |
+| ```<leader>fle``` | Open lsp diagnostic for current buffer |
+| ```<leader>flE``` | Open lsp diagnostics for all buffers |
 | ```<leader>flo``` | Open lsp outline of document |
+| ```<leader>fq```  | Open quickfix buffer |
 | ```<leader>fh```  | Open help |
 
 ## LSP

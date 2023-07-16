@@ -1,5 +1,5 @@
 local configs = require("nvim-treesitter.configs")
-configs.setup {
+configs.setup({
     -- mandatory parsers 
     ensure_installed = { "vimdoc", "c" , "cpp", "rust", "lua", "python" },
     sync_install = false,
@@ -10,5 +10,5 @@ configs.setup {
         -- we use lsp for this
         additional_vim_regex_highlighting = false,
     },
-}
+})
 

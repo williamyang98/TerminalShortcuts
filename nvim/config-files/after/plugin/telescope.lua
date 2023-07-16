@@ -13,7 +13,12 @@ vim.keymap.set("n", "<leader>fgs", builtin.git_status, {})
 vim.keymap.set("n", "<leader>fgb", builtin.git_branches, {})
 -- lsp
 vim.keymap.set("n", "<leader>flr", builtin.lsp_references, {})
-vim.keymap.set("n", "<leader>flo", function() 
+vim.keymap.set("n", "<leader>fle", function()
+    local opts = { bufnr = 0 }
+    builtin.diagnostics(opts)
+end)
+vim.keymap.set("n", "<leader>flE", builtin.diagnostics, {})
+vim.keymap.set("n", "<leader>flo", function()
     local opts = {
         symbols = {
             "interface",

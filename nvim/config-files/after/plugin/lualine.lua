@@ -1,5 +1,3 @@
-vim.cmd[[colorscheme tokyonight-night]]
-
 require("lualine").setup({
     options = {
         icons_enabled = false,

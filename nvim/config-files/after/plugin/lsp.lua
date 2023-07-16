@@ -29,7 +29,7 @@ lsp.set_preferences({
 
 -- only modify bindings if we have a language server
 lsp.on_attach(function(client, bufnr)
-  local opts = {buffer = bufnr, remap = false}
+  local opts = { buffer = bufnr, remap = false }
   vim.keymap.set("n", "<leader>lr", function() vim.lsp.buf.references() end, opts)
   vim.keymap.set("n", "<leader>ld", function() vim.lsp.buf.definition() end, opts)
   vim.keymap.set("n", "<leader>lh", function() vim.lsp.buf.hover() end, opts)
