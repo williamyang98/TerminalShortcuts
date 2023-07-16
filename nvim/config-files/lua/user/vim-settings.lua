@@ -59,7 +59,7 @@ vim.opt.smartcase = true
 -- change backup method
 vim.opt.swapfile = false
 vim.opt.backup = false
-vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+vim.opt.undodir = vim.env.HOME .. "/.nvim/undodir"
 vim.opt.undofile = true
 
 -- terminal settings
