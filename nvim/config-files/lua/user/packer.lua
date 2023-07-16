@@ -43,25 +43,28 @@ return require("packer").startup(function(use)
     use "nvim-treesitter/playground"
     use "nvim-treesitter/nvim-treesitter-context"
 
+    -- code folding
+    use { "kevinhwang91/nvim-ufo", requires = "kevinhwang91/promise-async" }
+
     -- lsp servers
     use {
-        'VonHeikemen/lsp-zero.nvim',
-        branch = 'v1.x',
+        "VonHeikemen/lsp-zero.nvim",
+        branch = "v1.x",
         requires = {
             -- lsp support
-            { 'neovim/nvim-lspconfig' },
-            { 'williamboman/mason.nvim' },
-            { 'williamboman/mason-lspconfig.nvim' },
+            { "neovim/nvim-lspconfig" },
+            { "williamboman/mason.nvim" },
+            { "williamboman/mason-lspconfig.nvim" },
             -- autocomplete
-            { 'hrsh7th/nvim-cmp' },
-            { 'hrsh7th/cmp-buffer' },
-            { 'hrsh7th/cmp-path' },
-            { 'saadparwaiz1/cmp_luasnip' },
-            { 'hrsh7th/cmp-nvim-lsp' },
-            { 'hrsh7th/cmp-nvim-lua' },
+            { "hrsh7th/nvim-cmp" },
+            { "hrsh7th/cmp-buffer" },
+            { "hrsh7th/cmp-path" },
+            { "saadparwaiz1/cmp_luasnip" },
+            { "hrsh7th/cmp-nvim-lsp" },
+            { "hrsh7th/cmp-nvim-lua" },
             -- snippets
-            { 'L3MON4D3/LuaSnip' },
-            { 'rafamadriz/friendly-snippets' },
+            { "L3MON4D3/LuaSnip" },
+            { "rafamadriz/friendly-snippets" },
         }
     }
 end)
