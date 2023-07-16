@@ -19,7 +19,9 @@ call plug#begin()
     Plug 'scrooloose/nerdtree'
     Plug 'easymotion/vim-easymotion'
     " fuzzy search
-    Plug 'ctrlpvim/ctrlp.vim'       " Fuzzy finder
+    Plug 'ctrlpvim/ctrlp.vim'
+    " session management
+    Plug 'tpope/vim-obsession'
 call plug#end()
 filetype plugin indent on
 

@@ -8,6 +8,7 @@ return require("packer").startup(function(use)
     use "tpope/vim-commentary"
     use "tpope/vim-fugitive"
     use "tpope/vim-repeat"
+    use "tpope/vim-obsession"
     use { "mg979/vim-visual-multi", branch = "master" }
     use "mbbill/undotree"
 
