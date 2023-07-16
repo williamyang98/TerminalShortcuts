@@ -7,6 +7,7 @@ return require("packer").startup(function(use)
     use "tpope/vim-surround"
     use "tpope/vim-commentary"
     use "tpope/vim-fugitive"
+    use "tpope/vim-repeat"
     use { "mg979/vim-visual-multi", branch = "master" }
     use "mbbill/undotree"
 
@@ -20,12 +21,12 @@ return require("packer").startup(function(use)
     use "nvim-lualine/lualine.nvim"
 
     -- navigation
-    use "phaazon/hop.nvim"
+    use { "phaazon/hop.nvim", branch = "v2" }
     use "nvim-tree/nvim-tree.lua"
 
     -- fuzzy search
     use {
-        "nvim-telescope/telescope.nvim", tag = "0.1.0",
+        "nvim-telescope/telescope.nvim", branch = "0.1.x",
         requires = { { "nvim-lua/plenary.nvim" } },
     }
 
@@ -41,9 +42,6 @@ return require("packer").startup(function(use)
     use "nvim-treesitter/playground"
     use "nvim-treesitter/nvim-treesitter-context"
 
-    -- git
-    use "sindrets/diffview.nvim"
-
     -- lsp servers
     use {
         'VonHeikemen/lsp-zero.nvim',
@@ -51,20 +49,18 @@ return require("packer").startup(function(use)
         requires = {
             -- lsp support
             { 'neovim/nvim-lspconfig' },
-            {'williamboman/mason.nvim'},
-            {'williamboman/mason-lspconfig.nvim'},
-
+            { 'williamboman/mason.nvim' },
+            { 'williamboman/mason-lspconfig.nvim' },
             -- autocomplete
             { 'hrsh7th/nvim-cmp' },
-            {'hrsh7th/cmp-buffer'},
-            {'hrsh7th/cmp-path'},
-            {'saadparwaiz1/cmp_luasnip'},
-            {'hrsh7th/cmp-nvim-lsp'},
-            {'hrsh7th/cmp-nvim-lua'},
-
+            { 'hrsh7th/cmp-buffer' },
+            { 'hrsh7th/cmp-path' },
+            { 'saadparwaiz1/cmp_luasnip' },
+            { 'hrsh7th/cmp-nvim-lsp' },
+            { 'hrsh7th/cmp-nvim-lua' },
             -- snippets
-            {'L3MON4D3/LuaSnip'},
-            {'rafamadriz/friendly-snippets'},
+            { 'L3MON4D3/LuaSnip' },
+            { 'rafamadriz/friendly-snippets' },
         }
     }
 end)

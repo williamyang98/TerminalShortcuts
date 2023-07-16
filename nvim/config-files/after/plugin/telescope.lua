@@ -13,7 +13,6 @@ vim.keymap.set("n", "<leader>fgs", builtin.git_status, {})
 vim.keymap.set("n", "<leader>fgb", builtin.git_branches, {})
 -- lsp
 vim.keymap.set("n", "<leader>flr", builtin.lsp_references, {})
--- vim.keymap.set("n", "<leader>flo", ":Telescope lsp_document_symbols ignore_symbols=variable<CR>", {})
 vim.keymap.set("n", "<leader>flo", function() 
     local opts = {
         symbols = {

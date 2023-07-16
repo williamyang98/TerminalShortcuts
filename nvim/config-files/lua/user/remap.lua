@@ -19,5 +19,5 @@ vim.keymap.set("n", "<leader>tc", ":tabc<CR>")
 vim.keymap.set("n", "<leader>tl", ":tabm +1<CR>")
 vim.keymap.set("n", "<leader>th", ":tabm -1<CR>")
 
---1vim buffers
+-- vim buffers
 vim.keymap.set("n", "<leader>b", "<C-6>")

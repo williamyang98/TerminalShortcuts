@@ -40,16 +40,8 @@
 | ```<leader>fb```  | Open buffers |
 | ```<leader>fw```  | Open rip grep |
 | ```<leader>flr``` | Open lsp references |
+| ```<leader>flo``` | Open lsp outline of document |
 | ```<leader>fh```  | Open help |
-
-## Diffview
-| Binding       | Description |
-| ------------- | ----------- |
-| ```<leader>dr``` | Refresh git diff |
-| ```<leader>do``` | Open git diff |
-| ```<leader>dc``` | Close git diff |
-| ```<leader>dt``` | Toggle files panel |
-| ```<leader>dh``` | View history for current file |
 
 ## LSP
 | Binding       | Description |
