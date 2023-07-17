@@ -43,6 +43,7 @@
 | ```<leader>fle``` | Open lsp diagnostic for current buffer |
 | ```<leader>flE``` | Open lsp diagnostics for all buffers |
 | ```<leader>flo``` | Open lsp outline of document |
+| ```<leader>flO``` | Open lsp full outline of document |
 | ```<leader>fq```  | Open quickfix buffer |
 | ```<leader>fh```  | Open help |
 

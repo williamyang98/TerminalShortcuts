@@ -19,19 +19,23 @@ vim.keymap.set("n", "<leader>fle", function()
 end)
 vim.keymap.set("n", "<leader>flE", builtin.diagnostics, {})
 vim.keymap.set("n", "<leader>flo", function()
-    local opts = {
-        symbols = {
-            "interface",
-            "class",
-            "constructor",
-            "method",
+    local opts = {}
+    local filetype = vim.bo.filetype
+    if filetype == "c" or filetype == "cpp" then
+        opts.ignore_symbols = {
+            "property",
         }
-    }
-    if vim.bo.filetype == "vim" then
+    elseif filetype == "rust" then
+        opts.ignore_symbols = {
+            "field",
+            "typeparameter",
+        }
+    elseif filetype == "vim" then
         opts.symbols = { "function" }
     end
     builtin.lsp_document_symbols(opts)
 end)
+vim.keymap.set("n", "<leader>flO", builtin.lsp_document_symbols, {}) 
 -- quickfix buffer
 vim.keymap.set("n", "<leader>fq", builtin.quickfix, {})
 -- other
