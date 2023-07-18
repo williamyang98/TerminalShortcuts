@@ -47,6 +47,9 @@ return require("packer").startup(function(use)
     -- code folding
     use { "kevinhwang91/nvim-ufo", requires = "kevinhwang91/promise-async" }
 
+    -- indent view
+    use "lukas-reineke/indent-blankline.nvim"
+
     -- lsp servers
     use {
         "VonHeikemen/lsp-zero.nvim",
