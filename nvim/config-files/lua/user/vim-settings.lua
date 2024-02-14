@@ -63,6 +63,7 @@ vim.opt.undodir = vim.env.HOME .. "/.nvim/undodir"
 vim.opt.undofile = true
 
 -- terminal settings
+vim.opt.shell = "bash"
 vim.api.nvim_create_autocmd('TermOpen', {
     callback = function()
         vim.opt.number = false
