@@ -20,7 +20,9 @@ return require("packer").startup(function(use)
 
     -- navigation
     use { "phaazon/hop.nvim", branch = "v2" }
-    use "nvim-tree/nvim-tree.lua"
+    -- use "nvim-tree/nvim-tree.lua"
+    -- nvim-tree is extremely laggy on windows when alot of files are being added/deleted
+    use 'scrooloose/nerdtree'
 
     -- fuzzy search
     use {
