@@ -111,6 +111,7 @@ nnoremap <leader><leader> <Plug>(easymotion-bd-w)
 nnoremap <leader>mo :NERDTreeFocus<CR>
 nnoremap <leader>mc :NERDTreeClose<CR>
 nnoremap <leader>mt :NERDTreeToggle<CR>
+let g:NERDTreeShowHidden = 1
 " vim-commentary
 autocmd FileType c,cpp setlocal commentstring=//\ %s
 " ctrl-p
