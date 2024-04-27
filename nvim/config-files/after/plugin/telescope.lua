@@ -2,9 +2,11 @@ local builtin = require('telescope.builtin')
 -- general navigation
 vim.keymap.set("n", "<leader>p", builtin.git_files, {})
 vim.keymap.set("n", "<leader>fp", builtin.find_files, {})
-vim.keymap.set("n", "<leader>fb", builtin.buffers, {})
+vim.keymap.set("n", "<leader>fb", function() 
+    builtin.buffers({ sort_mru = true })
+end)
 -- grep search
-vim.keymap.set("n", "<leader>fw", function ()
+vim.keymap.set("n", "<leader>fw", function()
     builtin.grep_string({ search = vim.fn.input("grep: ") })
 end)
 -- git
@@ -14,8 +16,7 @@ vim.keymap.set("n", "<leader>fgb", builtin.git_branches, {})
 -- lsp
 vim.keymap.set("n", "<leader>flr", builtin.lsp_references, {})
 vim.keymap.set("n", "<leader>fle", function()
-    local opts = { bufnr = 0 }
-    builtin.diagnostics(opts)
+    builtin.diagnostics({ bufnr = 0 })
 end)
 vim.keymap.set("n", "<leader>flE", builtin.diagnostics, {})
 vim.keymap.set("n", "<leader>flo", function()
