@@ -1,14 +1,28 @@
-local configs = require("nvim-treesitter.configs")
-configs.setup({
-    -- mandatory parsers 
-    ensure_installed = { "vimdoc", "c" , "cpp", "rust", "lua", "python" },
-    sync_install = false,
-    auto_install = true,
+local plugin = require("nvim-treesitter")
 
-    highlight = {
-        enable = true,
-        -- we use lsp for this
-        additional_vim_regex_highlighting = false,
-    },
+plugin.setup({
+    auto_install = true,
 })
 
+plugin.install({
+    "vimdoc",
+    "c",
+    "cpp",
+    "rust",
+    "lua",
+    "python",
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = {
+        "vimdoc",
+        "c",
+        "cpp",
+        "rust",
+        "lua",
+        "python",
+    },
+    callback = function()
+        vim.treesitter.start()
+    end,
+})

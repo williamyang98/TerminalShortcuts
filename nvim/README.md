@@ -1,6 +1,16 @@
-# Prerequistes
-## Install packer packages
-- Run ```:PackerInstall```
+# Installation instructions
+## Linux
+1. Download neovim 0.12
+2. Copy neovim config: ```./install.sh```
+3. Build and install tree-sitter: ```cargo install --locked tree-sitter-cli```
+    - **NOTE:** Using ```:MasonInstall tree-sitter-cli``` will download a version of ```tree-sitter-cli``` that links to the wrong version of glibc often so best to build from scratch
+
+## Windows
+1. Download neovim 0.12
+2. Link junction for neovim config: ```pwsh ./install.ps1```
+3. Download and install
+    - Option 1 using Github: [tree-sitter](https://github.com/tree-sitter/tree-sitter/releases)
+    - Option 2 using Mason inside neovim: ```:MasonInstall tree-sitter-cli```
 
 ## Install ripgrep for telescope
 - [repository](https://github.com/BurntSushi/ripgrep).
@@ -12,7 +22,6 @@
 ## Setup compiler for treesitter parser and LSP servers
 - On windows make ```cl.exe``` available by opening MSVC x64 developer environment.
 - Then open ```nvim``` and let it automatically compile the parsers and LSPs.
-
 
 # Bindings
 ## File tree
